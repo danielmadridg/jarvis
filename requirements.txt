@@ -1,0 +1,15 @@
+sounddevice
+numpy
+SpeechRecognition
+PyAudio
+faster-whisper
+anthropic
+openai
+edge-tts
+pygame
+spotipy
+openwakeword
+onnxruntime
+pyautogui
+psutil
+Pillow
