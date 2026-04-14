@@ -1,6 +1,14 @@
-# Secrets
+# Environment & Secrets
 .env
-.spotify_cache
+.env.local
+.env.*.local
+*.key
+*.pem
+credentials.json
+oauth_token.json
+
+# Spotify cache
+.spotify_cache/
 
 # Jarvis runtime files
 .jarvis_memory.json
@@ -18,11 +26,29 @@ __pycache__/
 *.egg-info/
 dist/
 build/
+.venv/
+venv/
+env/
+ENV/
 
-# Temp audio files
+# Audio files (TTS cache)
 *.mp3
+*.wav
 jarvis_tts_cache/
+tempdir/
 
 # IDE
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# OS
+Thumbs.db
+.DS_Store
