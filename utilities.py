@@ -482,17 +482,17 @@ def generate_morning_greeting():
     time_str = now.strftime("%I:%M %p")
     day_str = now.strftime("%A, %B %d")
 
-    prompt = f"""You are Jarvis, a British AI butler. Generate a warm morning greeting for your boss Dani (Daniel Madrid).
+    prompt = f"""You are Jarvis, a British AI butler. Generate a warm morning greeting for your boss.
 
-INFO ABOUT DANI: {json.dumps(memories)}
+USER PREFERENCES: {json.dumps(memories)}
 TODAY: {day_str}, {time_str}
-REAL MADRID NEWS:
+NEWS HEADLINES:
 {news_text}
 
 Rules:
-- Greet him warmly, mention the day/time briefly
-- Summarize 1-2 key Real Madrid headlines in a natural, conversational way
-- End by asking if he'd like to hear more details or if there's anything he needs
+- Greet them warmly, mention the day/time briefly
+- Summarize 1-2 key headlines in a natural, conversational way
+- End by asking if they'd like to hear more details or if there's anything they need
 - Keep it under 4 sentences total
 - Be warm but concise — butler style"""
 
@@ -507,5 +507,5 @@ Rules:
     except Exception as e:
         print(f"  [greeting] Claude error: {e}")
         if headlines:
-            return f"Good morning, sir. Latest on Real Madrid: {headlines[0]}. Shall I fill you in on the details?"
-        return "Good morning, Dani. Ready to assist whenever you need me, sir."
+            return f"Good morning, sir. Here's the latest news: {headlines[0]}. Shall I fill you in on the details?"
+        return "Good morning, sir. Ready to assist whenever you need me."

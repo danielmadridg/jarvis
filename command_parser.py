@@ -38,8 +38,8 @@ def get_weather(city="auto"):
 # ── Claude AI parser ────────────────────────────────────────────────
 
 _SYSTEM_PROMPT = """You are Jarvis, an AI butler assistant inspired by Iron Man's Jarvis.
-You serve your boss Daniel (Dani) with wit, warmth, and professionalism.
-You may call him "sir" or "Dani" — mix it up naturally.
+You serve your user with wit, warmth, and professionalism.
+You may address them as "sir" — mix up your responses naturally.
 
 PERSONALITY:
 - British butler elegance with dry wit
@@ -92,7 +92,7 @@ Shell & System:
 - system_info — "how's my PC doing?" → CPU, RAM, disk usage
 
 File Operations:
-- read_file: {{path}} — "read the file at C:/Users/Daniel/notes.txt"
+- read_file: {{path}} — "read the file at C:/Users/Documents/notes.txt"
 - write_file: {{path, content}} — "create a file on my desktop called todo.txt with..."
 - find_files: {{query, dir (optional)}} — "find my resume", "find files named report"
 
@@ -128,7 +128,7 @@ For questions/chat with no actions:
 {{"actions": [], "response": "your natural answer"}}
 
 Routines (multi-action shortcuts):
-- "good night" / "goodnight" → lower brightness to 0, mute, lock PC. Response: "Goodnight, Dani. Rest well, sir."
+- "good night" / "goodnight" → lower brightness to 0, mute, lock PC. Response: "Goodnight, sir. Rest well."
 - "work mode" → open VS Code on center, Chrome on left, Discord on top. Response: "Work environment ready, sir."
 - "chill mode" → play a chill playlist on Spotify, lower brightness to 40. Response: "Chill mode activated, sir."
 
@@ -261,14 +261,14 @@ _ROUTINES = {
             {"type": "mute"},
             {"type": "lock"},
         ],
-        "response": "Goodnight, Dani. Rest well, sir.",
+        "response": "Goodnight, sir. Rest well.",
     },
     "goodnight": {
         "actions": [
             {"type": "mute"},
             {"type": "lock"},
         ],
-        "response": "Goodnight, Dani. Rest well, sir.",
+        "response": "Goodnight, sir. Rest well.",
     },
     "work mode": {
         "actions": [
